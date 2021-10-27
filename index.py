@@ -22,7 +22,7 @@ def welcome():
 def success():
     if request.method == "POST":
         fi = request.files["file"]
-        fi.save(fi.filename)
+        fi.save("Uploads/" + fi.filename)
         convertToPdf(fi.filename)
         pathToFile = "AudioBooks/audiobook.mp3"
         return send_file(pathToFile, as_attachment=True)

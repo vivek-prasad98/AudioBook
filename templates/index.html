@@ -26,5 +26,12 @@
             @AudioBook Creator | Mini Project by Vivek.
         </footer>
     </div>
+    <script>
+        function getFileName(){
+            let upload = document.getElementById("upload");
+            let fileName = upload.value.slice(upload.value.lastIndexOf("\\")+1);
+            document.getElementById("filename").innerText = fileName;
+        };
+    </script>
 </body>
 </html>

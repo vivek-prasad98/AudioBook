@@ -10,9 +10,10 @@
             <form method="post" action="/success" enctype="multipart/form-data">
                 <div class="pick">
                    <label>
-                    <input type="file" name="file">
+                    <input type="file" name="file" id='upload' onchange="getFileName()">
                     Upload File
-                   </label>
+                   </label><br>
+                   <span id="filename"></span>
                 </div>
                 <button type="submit" value="upload">Convert to AudioBook</button>
             </form>
