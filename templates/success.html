@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioBook Creator | SuccessFul</title>
+    <link rel="stylesheet" href="../static/master.css">
+</head>
+<body>
+    <div class="Success">
+        <div class="status">
+            <span class="howmuch" id="howMuch">0 %</span><br><br>
+            <span id="whatsGoing">File is uploading...</span>
+        </div>
+    </div>
+
+    <script>
+        async function waitFor(interval){
+            return new Promise((resolve) => {
+                setTimeout(()=>{resolve()},interval);
+            })
+        }
+        (async function() {
+            let percentage = document.getElementById("howMuch");
+            let status = document.getElementById("whatsGoing");
+            let current = 1;
+            while(current <= 100){
+                await waitFor(10)
+                percentage.innerText = current + " %";
+                current++;
+            }
+            status.innerText = 'Converting to AudioBook...';
+            current = 0;
+            while(current <= 100){
+                await waitFor(80)
+                percentage.innerText = current + " %";
+                current++;
+            }
+        })();
+    </script>
+</body>
+</html>

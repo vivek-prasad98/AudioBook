@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+ {% block main%}
+    <div class="Content">
+        <div class="innerSection">
+            <h1>Welcome to AudioBook<br> Converter</h1>
+            <hr><h4>Here you can easily create audiobooks from pdfs on a sngle click.
+            I am currently <br> working many additional feature that makes this more meaningful and useful for<br> creating audiobooks from Pdfs.</h4>
+        </div>
+        <div class="innerSection">
+            <form method="post" action="/success" enctype="multipart/form-data">
+                <div class="pick">
+                   <label>
+                    <input type="file" name="file">
+                    Upload File
+                   </label>
+                </div>
+                <button type="submit" value="upload">Convert to AudioBook</button>
+            </form>
+        </div>
+    </div>
+ {% endblock main%}
